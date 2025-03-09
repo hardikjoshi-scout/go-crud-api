@@ -150,7 +150,9 @@ func isValidEmail(email string) bool {
 func updateUser(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	idStr := params["id"] // 'id' is a string
-
+	log.Println("Request Method:", r.Method)
+	log.Println("Request URL:", r.URL)
+	log.Println("Request Headers:", r.Header)
 	// Convert 'id' to an integer
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
